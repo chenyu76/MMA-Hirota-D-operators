@@ -39,7 +39,7 @@ $$
 (4)
 
 $$
- \mathrm{D}_{x_1}\mathrm{D}_{x_2}\mathrm{D}_{x_3} \ f(x_1,x_2,x_3) \cdot g(x_1,x_2,x_3)
+  \mathrm{D}_x \mathrm{D}_t \mathrm{D}_y \ f(x, t, y) \cdot g(x, t, y)
 $$
 
 (5)
@@ -70,7 +70,7 @@ HirotaD[x x][f[x], g[x]]
 (* 3 *)
 HirotaD[x t^2][f[x, t], g[x, t]] 
 (* 4 *)
-HirotaD[x1 x2 x3][f[x1, x2, x3], g[x1, x2, x3]]
+HirotaD[x t y][f[x, t, y], g[x, t, y]]
 (* 5 *)
 HirotaD[x + t + 1][f[x, t], g[x, t]] 
 ```
@@ -107,7 +107,7 @@ HirotaDD[#1 #1 &][f, g][x]
 (* 3 *)
 HirotaDD[#1 #2^2 &][f, g][x, t]
 (* 4 *)
-HirotaDD[#1 #2 #3 &][f, g][x1, x2, x3]
+HirotaDD[#1 #2 #3 &][f, g][x, t, y]
 (* 5 *)
 HirotaDD[#1 + #2 + 1 &][f, g][x, t]
 ```
@@ -131,7 +131,7 @@ Dop[x][2][f[x], g[x]]
 (* 3 *)
 Dop[x, t][1, 2][f[x], g[x]]
 (* 4 *)
-Dop[x1, x2, x3][1, 1, 1][f[x1, x2, x3], g[x1, x2, x3]]
+Dop[x, t, y][1, 1, 1][f[x, t, y], g[x, t, y]]
 (* 5 *)
 Dop[x][1][f[x, t], g[x, t]] + Dop[t][1][f[x, t], g[x, t]] + 1
 ```
@@ -160,11 +160,13 @@ HD[f[x], g[x], {x, 2}]
 (* 3 *)
 HD[f[x], g[x], x, {t, 2}]
 (* 4 *)
-Dop[f[x1, x2, x3], g[x1, x2, x3], x1, x2, x3]
+Dop[f[x, t, y], g[x, t, y], x, t, y]
 (* 5 *)
 HD[f[x, t], g[x, t], x] + HD[f[x, t], g[x, t], t] + 1
 ```
 
-### Warning
+**Warning**
 
 There is not guarantee that all functions will give the correct result all the time. (Though I believe they should be right.)
+
+If you encounter any problems, feel free to create a issue.
