@@ -76,7 +76,7 @@ HirotaD[x + t + 1][f[x, t], g[x, t]]
 ```
 
 #### Known problem
-`
+
 - Inside the function, variables (e.g. `x`) have intermediate form with argument (e.g `x[1]`). So when input function contain variable and it's function calling form (e.g. `x` and `x[1]`), `HirotaD` may cause miscalculation.
 - Argument `P` will try to differentiate all symbols it have. So when `P` contains constant $C$, make sure $C$ has a value or change the definition to execlude specific symbol.
 
