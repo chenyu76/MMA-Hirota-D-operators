@@ -61,7 +61,7 @@ HirotaDD[P_][ff_, gg_][x___] :=
                     (Composition @@ #&) /@
                         (
                             Function[e,
-                                        If[NumberQ[e],
+                                        If[Head[e] =!= Function,
                                             e #&
                                             ,
                                             e
